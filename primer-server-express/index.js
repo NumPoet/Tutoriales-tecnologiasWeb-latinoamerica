@@ -1,7 +1,10 @@
 const express = require ('express');
 const morgan = require('morgan');
 const app = express();
+// Requiriendo Rutas
 
+const routes = require('./routes');
+const routesApi =require('./route-api');
 // Configuraciones
 
 app.set('appName', 'Mi primer server en express');
@@ -12,13 +15,8 @@ app.use(morgan('combined'))
 
 
 // Rutas
-app.get('/', (req, res) => {
-    res.render('index.ejs');
-});
-
-app.get('/login', (req, res) => {
-    res.end('Aquí va  el login');
-});
+app.use(routes);
+app.use('/api', routesApi);
 
 app.get('*', (req, res) =>{
     res.end('Archivo no encontrado');
