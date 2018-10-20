@@ -11,7 +11,7 @@ app.set('appName', 'Mi primer server en express');
 app.set('views', __dirname+'/views');
 app.set('View engine', 'ejs');
 // Middlewares
-app.use(morgan('combined'))
+   //app.use(morgan('combined'))
 
 
 // Rutas
